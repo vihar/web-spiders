@@ -9,9 +9,9 @@ class LovequotesSpider(scrapy.Spider):
 
     def parse(self, response):
         self.log("Visit Successful\n" + response.url)
-        for quote in response.css('div.bqcpx'):
-            item = {
-                'quote_text': quote.css('a.b-qt::text').extract_first(),
-                'tags': quote.css('a.bq-aut::text').extract_first()
-            }
-            yield item
+        # for quote in response.css('div.new-msnry-grid'):
+        item = {
+            'quote_text': response.css('a.b-qt::text').extract(),
+            'tags': response.css('a.bq-aut::text').extract()
+        }
+        yield item

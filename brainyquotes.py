@@ -1,6 +1,6 @@
 from scrapy import Spider
 from scrapy.http import Request
-from inspirantion_quotes.items import InspirantionQuotesItem
+#from inspirantion_quotes.items import InspirantionQuotesItem
 
 
 class Quotes(Spider):
